@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Books</h1>
 
@@ -17,13 +16,14 @@
         <td><%= book.title %></td>
         <td><%= book.body %></td>
         <td><%= link_to 'Show', book, class: "show_#{book.id}" %></td>
-        <td><%= link_to 'Edit', edit_book_path, class: "edit_#{book.id}" %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "destroy_#{book.id}" %></td>
+        <td><%= link_to 'Edit', edit_book_path(book), class: "edit_#{book.id}" %></td>
+        <td><%= link_to 'Destroy', book, method: :delete,
+                data: { confirm: 'Are you sure?' },
+                  class: "destroy_#{book.id}" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-
 <h2>New book</h2>
-<%= render 'form'%>
+<%= render "form", book: @book %>
