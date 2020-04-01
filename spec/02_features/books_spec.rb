@@ -6,7 +6,7 @@ RSpec.feature "動作に関するテスト", type: :feature do
       FactoryBot.create(:book)
     end
   end
-  scenario "トップ画面(root_path)に新規投稿ページへのリンクが表示されているか" do
+  scenario "トップ画面(root_path)に新規登録ページへのリンクが表示されているか" do
     visit root_path
     expect(page).to have_link "", href: books_path
   end
